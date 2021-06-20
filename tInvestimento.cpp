@@ -1,16 +1,16 @@
 #include <iostream>
-
+#include <cmath>
 using namespace  std;
 
-struct Investimento{
+struct tInvestimento{
 
 double MI;
 double TJ;
 int PI;
-double JS;
+
 
 void MFS (double MI, double TJ, int PI){
-  
+  double JS;
   JS = MI * TJ/100 * PI;
   double MS = MI + JS;
 
@@ -28,12 +28,25 @@ void MFC (double MI, double TJ, int PI){
 }
  
  
-/*void CAM (){
+void CAM (int op){
 
-  double TJM = JS/(MI * (PI*12));
+  if(op == 1){
+    double ConversaoS = TJ/12.0;
+    cout.precision(2);
+    cout << fixed;
+    cout << "Convertendo taxa de juros anual simples para mensal: " << ConversaoS << endl << endl;
 
-  cout << "conversão da taxa de juros de ao ano para ao mês é " << TJM;
-}*/
+  }else{
+
+  double ConversaoC = (pow(1 + TJ/100, 1.0/12.0) - 1) * 100; 
+  cout.precision(2);
+  cout << fixed;
+  cout << "Convertendo taxa de juros anual composto para mensal: " << ConversaoC  << endl << endl;
+}
+}
+
+
 
 };
+
 
