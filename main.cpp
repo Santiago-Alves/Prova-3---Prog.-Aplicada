@@ -8,11 +8,17 @@ int main() {
   Investimento investimento;
 
   cout << "Digite o montante investido: ";
-  cin >> investimento.MontanteInvestido;
+  cin >> investimento.MI;
   cout << "Digite a taxa de juros anual: ";
-  cin >> investimento.TaxaJuros;
+  cin >> investimento.TJ;
   cout << "Digite o periodo de investimento em anos: ";
-  cin >>  investimento.PeriodoInvestimento;
+  cin >>  investimento.PI;
   
-  
+  cout << endl;
+
+  investimento.MFS(investimento.MI,investimento.TJ,investimento.PI);
+
+  investimento.MFC(investimento.MI,investimento.TJ,investimento.PI);
+
+  investimento.CAM();
 }
